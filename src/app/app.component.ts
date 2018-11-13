@@ -6,5 +6,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'blog';
+
+  curent_date = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 0
+    );
+  });
+  posts = [
+    {
+      title: 'Aniv d\'un ami',
+      content: 'Joyeux aniversaire mon ami',
+      loveIts: 0,
+      created_at: this.curent_date
+    },
+    {
+      title: 'Le jour où je suis né',
+      content: 'Joyeux aniversaire à moi',
+      loveIts: 0,
+      created_at: this.curent_date
+    },
+    {
+      title: 'Le jour où j\'avais su pourquoi j\'étais né',
+      content: 'Le jour où j\'ai choisi l\'informatique comme domaine de ma vie',
+      loveIts: 0,
+      created_at: this.curent_date
+    },
+    {
+      title: 'Ce jour là!',
+      content: 'Le jour où j\'ai choisi le code comme petit dej',
+      loveIts: 0,
+      created_at: this.curent_date
+    }
+  ];
 }
