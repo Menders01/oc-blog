@@ -1,8 +1,15 @@
-<li [ngClass]="{'list-group-item': true,
+<li class="mb-3" [ngClass]="{'list-group-item': true,
                 'list-group-item-success': loveIts > 0,
                 'list-group-item-danger': loveIts < 0}">
-  <h5 [ngStyle]="{color: getColor()}">{{titlePost}} --- {{dateh | async | date: 'short' | lowercase}}</h5>
-  <p class="text-body">{{contentPost}}</p>
-  <a href="#" class="btn btn-success" (click)= "onLove(true)">Love it!</a>
-  <a href="#" class="btn btn-danger" (click)= "onLove(false)">Don't love it!</a>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title" [ngStyle]="{color: getColor()}">{{titlePost}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{dateh | date: 'EEEE d MMMM y' | uppercase}}</h6>
+    <p class="card-text">{{contentPost}}</p>
+    <a href="#" class="card-link btn btn-success" (click)= "onLove(true)">Love it!</a>
+    <a href="#" class="card-link btn btn-danger" (click)= "onLove(false)">Don't love it!</a>
+    <span  class="card-link" *ngIf="loveIts >= 0">Like: {{loveIts}}</span>
+    <span  class="card-link" *ngIf="loveIts <= 0">Unlike: {{loveIts}}</span>
+  </div>
+</div>
 </li>

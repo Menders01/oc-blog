@@ -7,14 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  curent_date = new Promise((resolve, reject) => {
-    const date = new Date();
-    setTimeout(
-      () => {
-        resolve(date);
-      }, 0
-    );
-  });
+  curent_date = new Date();
   posts = [
     {
       title: 'Aniv d\'un ami',
